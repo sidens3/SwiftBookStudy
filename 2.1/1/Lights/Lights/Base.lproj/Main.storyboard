@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -14,15 +14,15 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="LightsViewController" customModule="Lights" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u9H-C9-4cl">
-                                <rect key="frame" x="103.66666666666669" y="330" width="207" height="207"/>
+                                <rect key="frame" x="103.66666666666669" y="299" width="207" height="207"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pgL-sr-g3v">
-                                <rect key="frame" x="147" y="616" width="120" height="30"/>
+                                <rect key="frame" x="147" y="802" width="120" height="30"/>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="uEO-NO-Moq"/>
@@ -35,7 +35,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vwa-HF-cJ0">
-                                <rect key="frame" x="103.66666666666669" y="100" width="207" height="207"/>
+                                <rect key="frame" x="103.66666666666669" y="69" width="207" height="207"/>
                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                             </view>
                         </subviews>
@@ -44,13 +44,14 @@
                         <constraints>
                             <constraint firstItem="pgL-sr-g3v" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="0jm-lC-u3f"/>
                             <constraint firstItem="vwa-HF-cJ0" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="CF0-K1-CfM"/>
-                            <constraint firstItem="vwa-HF-cJ0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="HWf-Up-hcs"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pgL-sr-g3v" secondAttribute="bottom" constant="90" id="UB4-gI-XTX"/>
+                            <constraint firstItem="vwa-HF-cJ0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="HWf-Up-hcs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pgL-sr-g3v" secondAttribute="bottom" constant="30" id="UB4-gI-XTX"/>
                             <constraint firstItem="u9H-C9-4cl" firstAttribute="top" secondItem="vwa-HF-cJ0" secondAttribute="bottom" constant="23" id="aIK-Fc-FkX"/>
                             <constraint firstItem="u9H-C9-4cl" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="bjF-Yz-c3n"/>
                             <constraint firstItem="vwa-HF-cJ0" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="lSI-2B-08f"/>
                             <constraint firstItem="u9H-C9-4cl" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="nGS-fI-OZr"/>
                             <constraint firstItem="vwa-HF-cJ0" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="s8h-NF-OuM"/>
+                            <constraint firstItem="pgL-sr-g3v" firstAttribute="top" relation="greaterThanOrEqual" secondItem="u9H-C9-4cl" secondAttribute="bottom" constant="30" id="spS-fX-Sag"/>
                             <constraint firstItem="u9H-C9-4cl" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="sst-jt-tAe"/>
                         </constraints>
                     </view>

@@ -21,22 +21,22 @@
                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PQu-hg-4BR" userLabel="bottomView">
-                                <rect key="frame" x="0.0" y="453" width="414" height="404"/>
+                                <rect key="frame" x="0.0" y="453" width="414" height="409"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="wfR-LG-PXb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1kD-Di-HSY"/>
-                            <constraint firstItem="wfR-LG-PXb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="8gS-e8-v33"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PQu-hg-4BR" secondAttribute="bottom" constant="5" id="NeR-64-xSf"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wfR-LG-PXb" secondAttribute="trailing" id="Net-F1-cQd"/>
-                            <constraint firstItem="wfR-LG-PXb" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="OFT-dS-wOL"/>
-                            <constraint firstItem="wfR-LG-PXb" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.5" id="dr6-hF-hNG"/>
-                            <constraint firstItem="PQu-hg-4BR" firstAttribute="width" secondItem="wfR-LG-PXb" secondAttribute="width" multiplier="1:1" id="m3R-zK-zSC"/>
-                            <constraint firstItem="PQu-hg-4BR" firstAttribute="top" secondItem="wfR-LG-PXb" secondAttribute="bottom" id="q0J-AP-BYp"/>
-                            <constraint firstItem="PQu-hg-4BR" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="weh-mB-tQl"/>
+                            <constraint firstItem="PQu-hg-4BR" firstAttribute="top" secondItem="wfR-LG-PXb" secondAttribute="bottom" id="2H7-vO-xOP"/>
+                            <constraint firstItem="PQu-hg-4BR" firstAttribute="centerX" secondItem="wfR-LG-PXb" secondAttribute="centerX" id="8G0-gd-EOh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PQu-hg-4BR" secondAttribute="bottom" id="Bm4-GW-n9w"/>
+                            <constraint firstItem="wfR-LG-PXb" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Bsr-hw-Yoc"/>
+                            <constraint firstItem="wfR-LG-PXb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="KGl-QI-qTa"/>
+                            <constraint firstItem="wfR-LG-PXb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="P3c-4R-cYw"/>
+                            <constraint firstItem="wfR-LG-PXb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XhB-Vv-rGe"/>
+                            <constraint firstItem="PQu-hg-4BR" firstAttribute="height" secondItem="wfR-LG-PXb" secondAttribute="height" id="ebI-jx-rtC"/>
+                            <constraint firstItem="PQu-hg-4BR" firstAttribute="width" secondItem="wfR-LG-PXb" secondAttribute="width" id="hUl-8C-3Rn"/>
                         </constraints>
                     </view>
                 </viewController>

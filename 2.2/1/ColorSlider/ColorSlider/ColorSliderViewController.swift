@@ -32,6 +32,10 @@ class ColorSliderViewController: UIViewController {
         greenColorSaturationSlider.defaultConfigure()
         blueColorSaturationSlider.defaultConfigure()
         
+        redColorSaturationSlider.minimumTrackTintColor = .red
+        greenColorSaturationSlider.minimumTrackTintColor = .green
+        blueColorSaturationSlider.minimumTrackTintColor = .blue
+        
         redColorSaturationLabel.text = String(redColorSaturationSlider.value)
         greenColorSaturationLabel.text = String(greenColorSaturationSlider.value)
         blueColorSaturationLabel.text = String(blueColorSaturationSlider.value)
@@ -61,6 +65,7 @@ class ColorSliderViewController: UIViewController {
                                                     green: CGFloat(greenColorSaturationSlider.value),
                                                     blue: CGFloat(blueColorSaturationSlider.value),
                                                     alpha: 1))
+        
     }
 }
 

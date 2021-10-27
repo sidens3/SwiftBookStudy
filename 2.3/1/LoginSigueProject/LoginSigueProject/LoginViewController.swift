@@ -32,9 +32,10 @@ class LoginViewController: UIViewController {
     }
     
     //MARK: - IBAction
-    @IBAction func loginButtonPressed() {
+    @IBAction private func loginButtonPressed() {
         let loginString = loginTextField.text ?? .empty
         let passwordString = passwordTextField.text ?? .empty
+        
         if authorizationCheck(login: loginString, password: passwordString) {
             self.performSegue(withIdentifier: Constants.loginSegueIdentifier, sender: self)
         } else {
@@ -52,8 +53,7 @@ class LoginViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Constants.loginSegueIdentifier {
             let vc = segue.destination as! WelcomeViewController
-            //todo
-            //setup env for segue
+            vc.userName = loginTextField.text ?? .empty
         }
     }
 }

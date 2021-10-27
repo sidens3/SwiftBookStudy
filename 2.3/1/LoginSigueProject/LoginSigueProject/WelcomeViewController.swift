@@ -7,6 +7,10 @@
 
 import UIKit
 
+private enum Constants {
+    static let unwindToLoginSegueIdentifier = "unwindToLoginVC"
+}
+
 class WelcomeViewController: UIViewController {
     var userName = ""
     
@@ -22,6 +26,6 @@ class WelcomeViewController: UIViewController {
     @IBAction func logoutButtonPressed() {
         print("Logout pressed")
         
-        self.dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: Constants.unwindToLoginSegueIdentifier, sender: self)
     }
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum Constants {
+private enum Constants {
     static let loginSegueIdentifier = "loginSegueIdentifier"
 }
 
@@ -42,6 +42,11 @@ class LoginViewController: UIViewController {
         } else {
             print("Ошибка авторизации")
         }
+    }
+    
+    @IBAction func unwind (_ seg: UIStoryboardSegue) {
+        loginTextField.text = .empty
+        passwordTextField.text = .empty
     }
     
     //MARK: - Privite

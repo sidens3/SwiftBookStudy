@@ -91,6 +91,7 @@
                         <outlet property="loginTextField" destination="TV4-hQ-w4k" id="l6f-oi-9b7"/>
                         <outlet property="passwordTextField" destination="pyl-1f-G9Y" id="pI4-Lw-qJk"/>
                         <segue destination="gpS-Gq-JC5" kind="show" identifier="loginSegueIdentifier" id="xvD-72-ghN"/>
+                        <segue destination="X7N-sV-iF9" kind="unwind" unwindAction="unwind:" id="5en-cr-4QY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -139,9 +140,11 @@
                     <connections>
                         <outlet property="logoutButton" destination="boF-eh-UL1" id="Yxv-a5-qdV"/>
                         <outlet property="welcomeLabel" destination="Qb1-QV-IZB" id="COW-1Q-DAz"/>
+                        <segue destination="X7N-sV-iF9" kind="unwind" identifier="unwindToLoginVC" unwindAction="unwind:" id="PVo-35-Fuz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cOA-i8-oYj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="X7N-sV-iF9" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1060.8695652173915" y="110.86956521739131"/>
         </scene>

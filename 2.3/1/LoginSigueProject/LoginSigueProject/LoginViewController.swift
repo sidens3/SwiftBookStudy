@@ -23,12 +23,13 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loginButton.layer.cornerRadius = 8
     }
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super .touchesBegan(touches, with: event)
         
-        loginButton.layer.cornerRadius = 8
+        hideKeyboard()
     }
     
     //MARK: - IBAction
@@ -46,8 +47,14 @@ class LoginViewController: UIViewController {
     //MARK: - Privite
     private func authorizationCheck(login: String, password: String) -> Bool {
         //todo
-        // Тут выполняется авторизация, где false - неудачная автоизация, а true - удачная и проверка на пустые значения
-        return true
+        if login != .empty {
+            // Тут выполняется авторизация, где false - неудачная автоизация, а true - удачная
+            return true
+        } else {
+            showErrorAlert(with: "Empty login field")
+            return false
+        }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -56,9 +63,33 @@ class LoginViewController: UIViewController {
             vc.userName = loginTextField.text ?? .empty
         }
     }
+    
+    private func showErrorAlert(with message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil ))
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 
 //MARK: - String
 extension String {
     static let empty = ""
+}
+
+//MARK: - UIViewController
+extension UIViewController
+{
+    func hideKeyboard() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(UIViewController.dismissKeyboard))
+
+        view.addGestureRecognizer(tap)
+    }
+
+    @objc func dismissKeyboard()
+    {
+        view.endEditing(true)
+    }
 }

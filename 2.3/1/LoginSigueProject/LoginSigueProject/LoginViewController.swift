@@ -9,6 +9,8 @@ import UIKit
 
 private enum Constants {
     static let loginSegueIdentifier = "loginSegueIdentifier"
+    static let loginTextFieldTag = 0
+    static let passwordTextField = 1
 }
 
 class LoginViewController: UIViewController {
@@ -24,6 +26,14 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         loginButton.layer.cornerRadius = 8
+        
+        loginTextField.delegate = self
+        loginTextField.tag = Constants.loginTextFieldTag
+        loginTextField.returnKeyType = .next
+        
+        passwordTextField.delegate = self
+        passwordTextField.tag = Constants.passwordTextField
+        passwordTextField.returnKeyType = .done
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -39,8 +49,6 @@ class LoginViewController: UIViewController {
         
         if authorizationCheck(login: loginString, password: passwordString) {
             self.performSegue(withIdentifier: Constants.loginSegueIdentifier, sender: self)
-        } else {
-            print("Ошибка авторизации")
         }
     }
     
@@ -51,9 +59,7 @@ class LoginViewController: UIViewController {
     
     //MARK: - Privite
     private func authorizationCheck(login: String, password: String) -> Bool {
-        //todo
         if login != .empty {
-            // Тут выполняется авторизация, где false - неудачная автоизация, а true - удачная
             return true
         } else {
             showErrorAlert(with: "Empty login field")
@@ -77,14 +83,33 @@ class LoginViewController: UIViewController {
     }
 }
 
+//
+extension LoginViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+
+        switch textField.tag {
+        
+        case Constants.loginTextFieldTag:
+            passwordTextField.becomeFirstResponder()
+            
+        case Constants.passwordTextField:
+            textField.endEditing(true)
+            
+        default:
+            hideKeyboard()
+        }
+        return true
+    }
+}
+
 //MARK: - String
 extension String {
     static let empty = ""
 }
 
 //MARK: - UIViewController
-extension UIViewController
-{
+extension UIViewController {
     func hideKeyboard() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(
             target: self,
@@ -93,8 +118,7 @@ extension UIViewController
         view.addGestureRecognizer(tap)
     }
 
-    @objc func dismissKeyboard()
-    {
+    @objc func dismissKeyboard() {
         view.endEditing(true)
     }
 }

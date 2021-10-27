@@ -12,7 +12,7 @@ private enum Constants {
 }
 
 class WelcomeViewController: UIViewController {
-    var userName = ""
+    var userName: String = .empty
     
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var logoutButton: UIButton!
@@ -20,6 +20,7 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        logoutButton.layer.cornerRadius = 8
         welcomeLabel.text = "Welcome to screen, \n \(userName)"
     }
     

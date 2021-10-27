@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A21BED727299FF60063B3C1 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A21BED627299FF60063B3C1 /* String+Extensions.swift */; };
 		4A696EFF2729241E00C3F178 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A696EFE2729241E00C3F178 /* AppDelegate.swift */; };
 		4A696F012729241E00C3F178 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A696F002729241E00C3F178 /* SceneDelegate.swift */; };
 		4A696F032729241E00C3F178 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A696F022729241E00C3F178 /* LoginViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A21BED627299FF60063B3C1 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		4A696EFB2729241E00C3F178 /* LoginSigueProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginSigueProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A696EFE2729241E00C3F178 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A696F002729241E00C3F178 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A21BE4B27299FC40063B3C1 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4A21BED627299FF60063B3C1 /* String+Extensions.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
 		4A696EF22729241D00C3F178 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +68,7 @@
 		4A696EFD2729241E00C3F178 /* LoginSigueProject */ = {
 			isa = PBXGroup;
 			children = (
+				4A21BE4B27299FC40063B3C1 /* extensions */,
 				4A696EFE2729241E00C3F178 /* AppDelegate.swift */,
 				4A696F002729241E00C3F178 /* SceneDelegate.swift */,
 				4A696F022729241E00C3F178 /* LoginViewController.swift */,
@@ -140,6 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A21BED727299FF60063B3C1 /* String+Extensions.swift in Sources */,
 				4A696F032729241E00C3F178 /* LoginViewController.swift in Sources */,
 				4A696F1327292A0700C3F178 /* WelcomeViewController.swift in Sources */,
 				4A696EFF2729241E00C3F178 /* AppDelegate.swift in Sources */,

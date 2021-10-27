@@ -21,7 +21,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
-    //MARK: - Life cicle
+    //MARK: - Life Cicle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,6 +47,7 @@ class LoginViewController: UIViewController {
         let loginString = loginTextField.text ?? .empty
         let passwordString = passwordTextField.text ?? .empty
         
+        view.endEditing(true)
         if authorizationCheck(login: loginString, password: passwordString) {
             self.performSegue(withIdentifier: Constants.loginSegueIdentifier, sender: self)
         }
@@ -83,7 +84,7 @@ class LoginViewController: UIViewController {
     }
 }
 
-//
+//MARK: - UITextFieldDelegate
 extension LoginViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -101,11 +102,6 @@ extension LoginViewController: UITextFieldDelegate {
         }
         return true
     }
-}
-
-//MARK: - String
-extension String {
-    static let empty = ""
 }
 
 //MARK: - UIViewController

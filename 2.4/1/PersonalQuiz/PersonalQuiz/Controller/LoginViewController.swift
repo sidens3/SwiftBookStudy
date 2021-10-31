@@ -78,25 +78,35 @@ class LoginViewController: UIViewController {
     
     //MARK: - Privite
     private func authorizationCheck(login: String, password: String) -> Bool {
-        if login != .empty {
-            if login == userLogin && password == userPassword {
-                return true
-            } else {
-                showAlert(title: "Authintification error", message: "Incorrect login or password")
-            }
-            
-        } else {
-            showAlert(title: "Authintification error", message: "Empty login field")
-            return false
-        }
-        return false
+//        if login != .empty {
+//            if login == userLogin && password == userPassword {
+//                return true
+//            } else {
+//                showAlert(title: "Authintification error", message: "Incorrect login or password")
+//            }
+//
+//        } else {
+//            showAlert(title: "Authintification error", message: "Empty login field")
+//            return false
+//        }
+//        return false
+        //todo
+//        uncomment after develop
+        return true
     }
     
+    
+    // MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Constants.loginSegueIdentifier {
-            let vc = segue.destination as! WelcomeViewController
-            vc.userName = user.data.name
-            vc.userSecondName = user.data.secondName
+        let tabBarController = segue.destination as! UITabBarController
+        guard let tabBarControllers = tabBarController.viewControllers else { return }
+        
+        for tabBarController in tabBarControllers {
+            if segue.identifier == Constants.loginSegueIdentifier {
+                let welcomeViewController = tabBarController as! WelcomeViewController
+                welcomeViewController.userName = user.data.name
+                welcomeViewController.userSecondName = user.data.secondName
+            }
         }
     }
 }

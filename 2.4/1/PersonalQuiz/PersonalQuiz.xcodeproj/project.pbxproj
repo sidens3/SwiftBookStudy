@@ -15,6 +15,7 @@
 		4A696F082729242000C3F178 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A696F072729242000C3F178 /* Assets.xcassets */; };
 		4A696F0B2729242000C3F178 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A696F092729242000C3F178 /* LaunchScreen.storyboard */; };
 		4A696F1327292A0700C3F178 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A696F1227292A0700C3F178 /* WelcomeViewController.swift */; };
+		4AA505EA272E860300BA61DE /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA505E9272E860300BA61DE /* UIViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		4A696F0A2729242000C3F178 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A696F0C2729242000C3F178 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A696F1227292A0700C3F178 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		4AA505E9272E860300BA61DE /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +47,7 @@
 			isa = PBXGroup;
 			children = (
 				4A21BED627299FF60063B3C1 /* String+Extensions.swift */,
+				4AA505E9272E860300BA61DE /* UIViewController+Extension.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AA505EA272E860300BA61DE /* UIViewController+Extension.swift in Sources */,
 				4A21BED727299FF60063B3C1 /* String+Extensions.swift in Sources */,
 				4A696F032729241E00C3F178 /* LoginViewController.swift in Sources */,
 				4A696F1327292A0700C3F178 /* WelcomeViewController.swift in Sources */,

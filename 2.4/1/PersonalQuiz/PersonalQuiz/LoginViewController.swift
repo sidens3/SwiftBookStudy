@@ -20,6 +20,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var forgotLoginButton: UIButton!
+    @IBOutlet weak var forgotPasswordButton: UIButton!
     
     //MARK: - Life Cicle
     override func viewDidLoad() {
@@ -53,6 +55,14 @@ class LoginViewController: UIViewController {
         }
     }
     
+    @IBAction func forgotLoginButtonPressed() {
+        showAlert(title: "Forgot login?", message: "Don't worry. Don't use any login to enter")
+    }
+    
+    @IBAction func forgotPasswordButtonPressed() {
+        showAlert(title: "Forgot password?", message: "Don't worry. Don't use any password")
+    }
+    
     @IBAction func unwind (_ seg: UIStoryboardSegue) {
         loginTextField.text = .empty
         passwordTextField.text = .empty
@@ -63,7 +73,7 @@ class LoginViewController: UIViewController {
         if login != .empty {
             return true
         } else {
-            showErrorAlert(with: "Empty login field")
+            showAlert(title: "Error", message: "Empty login field")
             return false
         }
         
@@ -74,13 +84,6 @@ class LoginViewController: UIViewController {
             let vc = segue.destination as! WelcomeViewController
             vc.userName = loginTextField.text ?? .empty
         }
-    }
-    
-    private func showErrorAlert(with message: String) {
-        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-        
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil ))
-        self.present(alert, animated: true, completion: nil)
     }
 }
 
@@ -101,20 +104,5 @@ extension LoginViewController: UITextFieldDelegate {
             hideKeyboard()
         }
         return true
-    }
-}
-
-//MARK: - UIViewController
-extension UIViewController {
-    func hideKeyboard() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
-            target: self,
-            action: #selector(UIViewController.dismissKeyboard))
-
-        view.addGestureRecognizer(tap)
-    }
-
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
     }
 }

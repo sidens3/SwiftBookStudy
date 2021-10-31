@@ -24,8 +24,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var forgotPasswordButton: UIButton!
     
     // MARK: - Private properties
-    private let userLogin = "User"
-    private let userPassword = "Password"
+    private var userLogin = ""
+    private var userPassword = ""
     
     //MARK: - Life Cicle
     override func viewDidLoad() {
@@ -40,6 +40,9 @@ class LoginViewController: UIViewController {
         passwordTextField.delegate = self
         passwordTextField.tag = Constants.passwordTextField
         passwordTextField.returnKeyType = .done
+        
+        userLogin = User().login
+        userPassword = User().password
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

@@ -23,6 +23,10 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var forgotLoginButton: UIButton!
     @IBOutlet weak var forgotPasswordButton: UIButton!
     
+    // MARK: - Private properties
+    private let userLogin = "User"
+    private let userPassword = "Password"
+    
     //MARK: - Life Cicle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,11 +60,11 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func forgotLoginButtonPressed() {
-        showAlert(title: "Forgot login?", message: "Don't worry. Don't use any login to enter")
+        showAlert(title: "Forgot login?", message: "Don't worry. Your login is: \(userLogin)")
     }
     
     @IBAction func forgotPasswordButtonPressed() {
-        showAlert(title: "Forgot password?", message: "Don't worry. Don't use any password")
+        showAlert(title: "Forgot password?", message: "Don't worry. Your password is: \(userPassword)")
     }
     
     @IBAction func unwind (_ seg: UIStoryboardSegue) {
@@ -71,12 +75,17 @@ class LoginViewController: UIViewController {
     //MARK: - Privite
     private func authorizationCheck(login: String, password: String) -> Bool {
         if login != .empty {
-            return true
+            if login == userLogin && password == userPassword {
+                return true
+            } else {
+                showAlert(title: "Authintification error", message: "Incorrect login or password")
+            }
+            
         } else {
-            showAlert(title: "Error", message: "Empty login field")
+            showAlert(title: "Authintification error", message: "Empty login field")
             return false
         }
-        
+        return false
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

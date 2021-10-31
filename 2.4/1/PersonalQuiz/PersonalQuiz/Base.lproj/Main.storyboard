@@ -90,7 +90,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.6626478996632944" green="0.70437011118201631" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.97389342352864472" green="0.97495512303754994" blue="0.97788101434707642" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="osL-fn-wBc" secondAttribute="trailing" id="6Sm-Gj-0r8"/>
                             <constraint firstItem="osL-fn-wBc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="97P-qL-CTG"/>
@@ -102,7 +102,7 @@
                         <outlet property="loginButton" destination="pWr-sz-BbO" id="Jxf-tT-d2n"/>
                         <outlet property="loginTextField" destination="TV4-hQ-w4k" id="l6f-oi-9b7"/>
                         <outlet property="passwordTextField" destination="pyl-1f-G9Y" id="pI4-Lw-qJk"/>
-                        <segue destination="gpS-Gq-JC5" kind="show" identifier="loginSegueIdentifier" id="xvD-72-ghN"/>
+                        <segue destination="gpS-Gq-JC5" kind="presentation" identifier="loginSegueIdentifier" modalPresentationStyle="fullScreen" id="xvD-72-ghN"/>
                         <segue destination="X7N-sV-iF9" kind="unwind" unwindAction="unwind:" id="5en-cr-4QY"/>
                     </connections>
                 </viewController>
@@ -115,17 +115,17 @@
             <objects>
                 <viewController id="gpS-Gq-JC5" customClass="WelcomeViewController" customModule="PersonalQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dzd-eg-TsM">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qb1-QV-IZB">
-                                <rect key="frame" x="186.33333333333334" y="348" width="41.333333333333343" height="20.333333333333314"/>
+                                <rect key="frame" x="186.33333333333334" y="358" width="41.333333333333343" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="boF-eh-UL1">
-                                <rect key="frame" x="157" y="644" width="100" height="30"/>
+                                <rect key="frame" x="157" y="664" width="100" height="30"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="r6J-Eq-yvh"/>
@@ -140,7 +140,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GCi-Oi-iuX"/>
-                        <color key="backgroundColor" red="0.69856923820000005" green="0.7367678285" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.97258812189999999" green="0.97644513850000003" blue="0.97647196049999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="Qb1-QV-IZB" firstAttribute="centerX" secondItem="GCi-Oi-iuX" secondAttribute="centerX" id="7hS-VC-BGQ"/>
                             <constraint firstItem="Qb1-QV-IZB" firstAttribute="centerY" secondItem="GCi-Oi-iuX" secondAttribute="centerY" id="F0Q-0h-ZIM"/>

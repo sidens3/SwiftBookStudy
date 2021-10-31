@@ -105,6 +105,9 @@ class LoginViewController: UIViewController {
             if let welcomeViewController = tabBarController as? WelcomeViewController {
                 welcomeViewController.userName = user.data.name
                 welcomeViewController.userSecondName = user.data.secondName
+            } else if let navigationVC = tabBarController as? UINavigationController {
+                let aboutMeViewController = navigationVC.topViewController as! AboutMeViewController
+                aboutMeViewController.navigationItem.title = "About"
             }
         } 
     }

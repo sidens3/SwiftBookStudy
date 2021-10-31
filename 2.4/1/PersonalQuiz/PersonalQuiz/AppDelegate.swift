@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  LoginSigueProject
+//  PersonalQuiz
 //
 //  Created by Михаил Зиновьев on 27.10.2021.
 //

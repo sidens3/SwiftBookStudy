@@ -24,7 +24,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var forgotPasswordButton: UIButton!
     
     // MARK: - Private properties
-    private var user = User()
+    private var user: User = DeveloperUser()
     private var userLogin = ""
     private var userPassword = ""
     
@@ -42,8 +42,8 @@ class LoginViewController: UIViewController {
         passwordTextField.tag = Constants.passwordTextField
         passwordTextField.returnKeyType = .done
         
-        userLogin = user.authData.login
-        userPassword = user.authData.password
+        userLogin = user.getAuthData().login
+        userPassword = user.getAuthData().password
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -103,11 +103,13 @@ class LoginViewController: UIViewController {
 
         for tabBarController in tabBarControllers {
             if let welcomeViewController = tabBarController as? WelcomeViewController {
-                welcomeViewController.userName = user.data.name
-                welcomeViewController.userSecondName = user.data.secondName
+                welcomeViewController.userName = user.getPersonalData().name
+                welcomeViewController.userSecondName = user.getPersonalData().secondName
             } else if let navigationVC = tabBarController as? UINavigationController {
                 let aboutMeViewController = navigationVC.topViewController as! AboutMeViewController
                 aboutMeViewController.navigationItem.title = "About"
+                
+                aboutMeViewController.aboutMeInfo = user.getPersonalData()
             }
         } 
     }

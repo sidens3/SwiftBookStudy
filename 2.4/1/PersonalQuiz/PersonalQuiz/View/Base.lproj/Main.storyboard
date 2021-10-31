@@ -118,7 +118,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qb1-QV-IZB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qb1-QV-IZB">
                                 <rect key="frame" x="186.33333333333334" y="333.33333333333331" width="41.333333333333343" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -148,7 +148,7 @@
                             <constraint firstItem="GCi-Oi-iuX" firstAttribute="bottom" secondItem="boF-eh-UL1" secondAttribute="bottom" constant="42" id="i0T-gw-Sjh"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="JpE-KX-82Q"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="house" catalog="system" id="JpE-KX-82Q"/>
                     <navigationItem key="navigationItem" id="b1j-qb-0Tk"/>
                     <connections>
                         <outlet property="logoutButton" destination="boF-eh-UL1" id="Yxv-a5-qdV"/>
@@ -161,20 +161,33 @@
             </objects>
             <point key="canvasLocation" x="1968.1159420289857" y="110.86956521739131"/>
         </scene>
-        <!--About Me View Controller-->
+        <!--About-->
         <scene sceneID="4Tg-c4-8eF">
             <objects>
                 <viewController id="ctu-hk-Jby" customClass="AboutMeViewController" customModule="PersonalQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OMG-PA-WuG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About me screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36q-39-IP4">
+                                <rect key="frame" x="142" y="333" width="130" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Lhy-Ar-TbD"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.9764762521" green="0.9797193408" blue="0.97958427670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="36q-39-IP4" firstAttribute="centerY" secondItem="Lhy-Ar-TbD" secondAttribute="centerY" id="6sU-53-Ukh"/>
+                            <constraint firstItem="36q-39-IP4" firstAttribute="centerX" secondItem="Lhy-Ar-TbD" secondAttribute="centerX" id="Sa4-LT-xaZ"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="About" image="person" catalog="system" id="tz1-XV-pa1"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H2Q-p9-dCh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2848" y="134"/>
+            <point key="canvasLocation" x="1061" y="927"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="PMW-Km-kAI">
@@ -188,6 +201,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="gpS-Gq-JC5" kind="relationship" relationship="viewControllers" id="vsv-bn-L7p"/>
+                        <segue destination="ctu-hk-Jby" kind="relationship" relationship="viewControllers" id="hQU-AX-Em5"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TZH-gr-4xx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -196,9 +210,8 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="person" catalog="system" width="128" height="117"/>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

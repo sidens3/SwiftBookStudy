@@ -169,18 +169,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About me screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36q-39-IP4">
-                                <rect key="frame" x="142" y="355" width="130" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36q-39-IP4">
+                                <rect key="frame" x="16" y="355.33333333333331" width="382" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ux3-uJ-JdB">
-                                <rect key="frame" x="174.66666666666666" y="394" width="65" height="30"/>
+                                <rect key="frame" x="174.66666666666666" y="393.66666666666669" width="65" height="30"/>
                                 <state key="normal" title="More info"/>
                                 <connections>
                                     <action selector="moreInfoButtonPressed" destination="ctu-hk-Jby" eventType="touchUpInside" id="GQA-qv-ZgE"/>
-                                    <segue destination="8S3-N6-DLI" kind="show" identifier="showMoreInfo" id="0Kn-Ic-9BD"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -189,11 +188,17 @@
                         <constraints>
                             <constraint firstItem="36q-39-IP4" firstAttribute="centerY" secondItem="Lhy-Ar-TbD" secondAttribute="centerY" id="6sU-53-Ukh"/>
                             <constraint firstItem="36q-39-IP4" firstAttribute="centerX" secondItem="Lhy-Ar-TbD" secondAttribute="centerX" id="Sa4-LT-xaZ"/>
+                            <constraint firstItem="36q-39-IP4" firstAttribute="leading" secondItem="Lhy-Ar-TbD" secondAttribute="leading" constant="16" id="TVp-fk-3gR"/>
                             <constraint firstItem="Ux3-uJ-JdB" firstAttribute="centerX" secondItem="Lhy-Ar-TbD" secondAttribute="centerX" id="ajn-ia-5wh"/>
                             <constraint firstItem="Ux3-uJ-JdB" firstAttribute="top" secondItem="36q-39-IP4" secondAttribute="bottom" constant="18" id="jhk-2a-mwB"/>
+                            <constraint firstItem="Lhy-Ar-TbD" firstAttribute="trailing" secondItem="36q-39-IP4" secondAttribute="trailing" constant="16" id="v6O-Nc-7RV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="XEm-LQ-hNN"/>
+                    <connections>
+                        <outlet property="aboutMeLabel" destination="36q-39-IP4" id="EcK-gc-iqQ"/>
+                        <segue destination="8S3-N6-DLI" kind="show" identifier="showMoreInfo" id="mGD-TH-sNI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H2Q-p9-dCh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -242,11 +247,20 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smileCat" translatesAutoresizingMaskIntoConstraints="NO" id="S00-K0-vQt">
+                                <rect key="frame" x="147" y="79" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="6hH-HT-Tcj"/>
+                                    <constraint firstAttribute="width" constant="120" id="dSk-tP-ToD"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="38h-jf-MM5"/>
                         <color key="backgroundColor" red="0.97987216710000002" green="0.98311358689999995" blue="0.98297780749999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="S00-K0-vQt" firstAttribute="centerX" secondItem="38h-jf-MM5" secondAttribute="centerX" id="0ak-M6-Kp7"/>
                             <constraint firstItem="0Ea-bJ-ChM" firstAttribute="centerX" secondItem="38h-jf-MM5" secondAttribute="centerX" id="2eG-g0-jSV"/>
+                            <constraint firstItem="S00-K0-vQt" firstAttribute="top" secondItem="38h-jf-MM5" secondAttribute="top" constant="35" id="eax-rX-rii"/>
                             <constraint firstItem="0Ea-bJ-ChM" firstAttribute="centerY" secondItem="38h-jf-MM5" secondAttribute="centerY" id="ndt-kp-zoQ"/>
                         </constraints>
                     </view>
@@ -257,11 +271,12 @@
                         <outlet property="nameLabel" destination="gSL-yl-hjC" id="UsD-Vy-jIr"/>
                         <outlet property="profession" destination="Xaj-AX-2ln" id="tu9-dc-mUF"/>
                         <outlet property="secondNameLabel" destination="KLa-uK-FFv" id="r46-Vn-Bnf"/>
+                        <outlet property="smileCatImageView" destination="S00-K0-vQt" id="WwT-DJ-A3w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OWT-LH-Y6Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2949" y="927"/>
+            <point key="canvasLocation" x="2947.826086956522" y="926.9021739130435"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="PMW-Km-kAI">
@@ -305,6 +320,7 @@
     <resources>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="person" catalog="system" width="128" height="117"/>
+        <image name="smileCat" width="447" height="500"/>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -78,21 +78,18 @@ class LoginViewController: UIViewController {
     
     //MARK: - Privite
     private func authorizationCheck(login: String, password: String) -> Bool {
-//        if login != .empty {
-//            if login == userLogin && password == userPassword {
-//                return true
-//            } else {
-//                showAlert(title: "Authintification error", message: "Incorrect login or password")
-//            }
-//
-//        } else {
-//            showAlert(title: "Authintification error", message: "Empty login field")
-//            return false
-//        }
-//        return false
-        //todo
-//        uncomment after develop
-        return true
+        if login != .empty {
+            if login == userLogin && password == userPassword {
+                return true
+            } else {
+                showAlert(title: "Authintification error", message: "Incorrect login or password")
+            }
+
+        } else {
+            showAlert(title: "Authintification error", message: "Empty login field")
+            return false
+        }
+        return false
     }
     
     

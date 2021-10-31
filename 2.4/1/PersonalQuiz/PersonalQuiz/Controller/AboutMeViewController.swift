@@ -9,8 +9,15 @@ import UIKit
 
 class AboutMeViewController: UIViewController {
     
+    @IBOutlet weak var aboutMeLabel: UILabel!
     var aboutMeInfo: PersonalData?
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        aboutMeLabel.text = "Hi! \n I'm \(aboutMeInfo?.name ?? .empty) \(aboutMeInfo?.secondName ?? .empty). \n If you want to know more about me touch \"More button\", please!"
+    }
+    
     @IBAction func moreInfoButtonPressed() {
         self.performSegue(withIdentifier: "showMoreInfo", sender: self)
     }

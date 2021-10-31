@@ -24,6 +24,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var forgotPasswordButton: UIButton!
     
     // MARK: - Private properties
+    private var user = User()
     private var userLogin = ""
     private var userPassword = ""
     
@@ -41,8 +42,8 @@ class LoginViewController: UIViewController {
         passwordTextField.tag = Constants.passwordTextField
         passwordTextField.returnKeyType = .done
         
-        userLogin = User().login
-        userPassword = User().password
+        userLogin = user.authData.login
+        userPassword = user.authData.password
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -94,7 +95,8 @@ class LoginViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Constants.loginSegueIdentifier {
             let vc = segue.destination as! WelcomeViewController
-            vc.userName = loginTextField.text ?? .empty
+            vc.userName = user.data.name
+            vc.userSecondName = user.data.secondName
         }
     }
 }

@@ -8,11 +8,19 @@
 import UIKit
 
 class ResultViewController: UIViewController {
+    
+    @IBOutlet weak var animalTypeLabel: UILabel!
+    @IBOutlet weak var anymalTypeDefinitionLabel: UILabel!
+
+    public var answerChosen:[Answer]?
+
+    private var mostPopularAnimalType: AnimalType?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
+        selectMostPopularAnimalType()
+        updateUI()
     }
 
     // 1. Передать сюда массив с ответами
@@ -20,4 +28,28 @@ class ResultViewController: UIViewController {
     // 3. Отобразить результаты в соотвствии с этим животным
     // 4. Избавиться от кнопки возврата назад на экране результатов
     
+}
+
+// MARK: - Private Methods
+private extension ResultViewController {
+    
+    func updateUI() {
+        guard let userAnymalType = mostPopularAnimalType else { return }
+        
+        animalTypeLabel.text = String(userAnymalType.rawValue)
+        anymalTypeDefinitionLabel.text = String(userAnymalType.definition)
+    }
+    
+    func selectMostPopularAnimalType() {
+        guard let safeAnswerChosen = answerChosen else { return }
+        
+        let chosenAnimalTypeArray = safeAnswerChosen.map { $0.type }
+        var frequency = [AnimalType: Int]()
+        
+        chosenAnimalTypeArray.forEach { frequency[$0] = (frequency[$0] ?? 0) + 1 }
+
+        if let (type, _) = frequency.max(by: {$0.1 < $1.1}) {
+            mostPopularAnimalType = type
+        }
+    }
 }

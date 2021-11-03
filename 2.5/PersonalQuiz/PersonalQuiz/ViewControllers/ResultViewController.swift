@@ -21,13 +21,7 @@ class ResultViewController: UIViewController {
         
         selectMostPopularAnimalType()
         updateUI()
-    }
-
-    // 1. Передать сюда массив с ответами
-    // 2. Определить наиболее часто встречающийся тип животного
-    // 3. Отобразить результаты в соотвствии с этим животным
-    // 4. Избавиться от кнопки возврата назад на экране результатов
-    
+    }    
 }
 
 // MARK: - Private Methods
@@ -36,8 +30,10 @@ private extension ResultViewController {
     func updateUI() {
         guard let userAnymalType = mostPopularAnimalType else { return }
         
-        animalTypeLabel.text = String(userAnymalType.rawValue)
-        anymalTypeDefinitionLabel.text = "\(userAnymalType) - " + String(userAnymalType.definition)
+        self.navigationItem.hidesBackButton = true
+        
+        animalTypeLabel.text = "\(userAnymalType) - " + String(userAnymalType.rawValue)
+        anymalTypeDefinitionLabel.text = String(userAnymalType.definition)
     }
     
     func selectMostPopularAnimalType() {

@@ -37,7 +37,7 @@ private extension ResultViewController {
         guard let userAnymalType = mostPopularAnimalType else { return }
         
         animalTypeLabel.text = String(userAnymalType.rawValue)
-        anymalTypeDefinitionLabel.text = String(userAnymalType.definition)
+        anymalTypeDefinitionLabel.text = "\(userAnymalType) - " + String(userAnymalType.definition)
     }
     
     func selectMostPopularAnimalType() {
